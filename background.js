@@ -3,7 +3,7 @@ var urlPattern = 'https?://([^\.]+\.)?mixcloud.com(/[^/]+/[^/]+/?)';
 chrome.pageAction.onClicked.addListener(function(tab){
     var regExp = new RegExp(urlPattern, "i");
     var matches = regExp.exec(tab.url);
-    var downloadUrl = "http://www.mixcloud-downloader.com" + matches[2] + "?utm_source=chrome-extension";
+    var downloadUrl = "http://www.mixcloud-downloader.com/dl/mixcloud" + matches[2] + "?utm_source=chrome-extension";
     
     chrome.tabs.create({ url: downloadUrl });
 });
